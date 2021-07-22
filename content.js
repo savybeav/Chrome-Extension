@@ -1,5 +1,14 @@
 alert("All Roads Lead to Codesmith");
 alert(window.location.href);
+redirectLink(document.body);
+// create recursive function to loop through every element on the page
+function redirectLink (element) {
+  if(element.hasChildNodes()) {
+    element.childNodes.forEach(redirectLink)
+  }else if (element.nodeType === Node.TEXT_NODE) {
+    element.textContent = element.textContent.replace(/fullstack/gi, "TESTING")
+  }
+}
 
 // document.addEventListener('loading', function () {
 //   alert("Hello WOrld");
