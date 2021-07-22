@@ -1,14 +1,26 @@
 alert("All Roads Lead to Codesmith");
 alert(window.location.href);
-redirectLink(document.body);
+replaceURL(url);
+// redirectLink(document.body);
 // create recursive function to loop through every element on the page
-function redirectLink (element) {
-  if(element.hasChildNodes()) {
-    element.childNodes.forEach(redirectLink)
-  }else if (element.nodeType === Node.TEXT_NODE) {
-    element.textContent = element.textContent.replace(/fullstack/gi, "TESTING")
+// function redirectLink (element) {
+//   if(element.hasChildNodes()) {
+//     element.childNodes.forEach(redirectLink)
+  // }else if (element.nodeType === Node.ELEMENT_NODE) {
+  //   element.textContent = element.textContent.replace(/fullstack/gi, "TESTING")
+  // }
+//   } else{
+//     element.querySelectorAll('href')
+//   }
+// }
+
+function replaceURL (url) {
+  if (url === "https://www.fullstackacademy.com/") {
+    window.location.replace("https://codesmith.io/")
   }
 }
+
+replaceURL(window.location.href);
 
 // document.addEventListener('loading', function () {
 //   alert("Hello WOrld");
